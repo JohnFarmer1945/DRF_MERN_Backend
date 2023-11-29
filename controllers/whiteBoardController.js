@@ -26,11 +26,15 @@ const singleSpecificWhiteBoardEntry = async (req, res) => {
 
 // create a new entry
 const createEntry = async (req, res) => {
-  const { title } = req.body;
+  const { title, description } = req.body;
 
-  // ad doc to db
+  // ad mongo-document to db
   try {
-    const whiteBoardEntry = await whiteBoardModel.create({ title });
+    const whiteBoardEntry = await whiteBoardModel.create({
+      title,
+      description,
+    });
+
     res.status(200).json(whiteBoardEntry);
   } catch (error) {
     res.status(400).json({ error: error.message });
