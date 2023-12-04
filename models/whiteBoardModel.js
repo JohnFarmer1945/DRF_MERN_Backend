@@ -12,13 +12,10 @@ const whiteBoardSchema = new Schema(
     description: {
       type: String,
       required: true,
-      maxLength: 80,
+      maxLength: 50,
     },
   },
-
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("whiteBoardModel", whiteBoardSchema);
