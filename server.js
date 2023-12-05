@@ -27,6 +27,7 @@ app.use("/api/whiteboard", whiteboardRoutes);
 
 // Connect to db
 console.log("*** Backend Node.JS Server started ... ***");
+console.log("");
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
@@ -39,3 +40,5 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
+console.log("");
+console.log("Cors added with *");
