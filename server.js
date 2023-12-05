@@ -41,4 +41,4 @@ mongoose
     console.log(error);
   });
 console.log("");
-console.log("Cors added with *");
+console.log("Cors added with 'ONLY netlify'");
