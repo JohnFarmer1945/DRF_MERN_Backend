@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: ["https://drf-crewbriefing.netlify.app/"],
+    origin: ["https://drf-crewbriefing.netlify.app"],
   })
 );
 
@@ -41,4 +41,4 @@ mongoose
     console.log(error);
   });
 console.log("");
-console.log("Cors added with 'ONLY netlify'");
+console.log("Cors added with 'XXX'");
