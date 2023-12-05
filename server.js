@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: "*",
+    origin: ["https://drf-crewbriefing.netlify.app/"],
   })
 );
 
