@@ -40,5 +40,4 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-console.log("");
 console.log("CORS API ONLY https://drf-crewbriefing.netlify.app ");

@@ -1,0 +1,3 @@
+DEV=TRUE
+PORT=4000
+MONGO_URI=mongodb+srv://johnfarmer:blgofhPFrOwu9N4M@cluster0.fsqznst.mongodb.net/?retryWrites=true&w=majority
