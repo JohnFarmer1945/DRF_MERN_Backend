@@ -1,20 +1,21 @@
 const express = require("express");
+
 const {
-  getAllWhiteBoardEntrys,
-  singleSpecificWhiteBoardEntry,
+  getAllFlightQuestions,
+  singleSpecificFlightQuestion,
   createEntry,
   deleteEntry,
   updateEntry,
-} = require("../controllers/whiteBoardController");
+} = require("../controllers/flightQuestionsController");
 
 //const whiteBoardModel = require("../models/whiteBoardModel");
 const router = express.Router();
 
 // GET
-router.get("/", getAllWhiteBoardEntrys);
+router.get("/", getAllFlightQuestions);
 
 //POST
-router.get("/:id", singleSpecificWhiteBoardEntry);
+router.get("/:id", singleSpecificFlightQuestion);
 
 // POST
 router.post("/", createEntry);

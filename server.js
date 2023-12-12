@@ -1,20 +1,26 @@
+// Access to process variables
 require("dotenv").config();
 
 const express = require("express");
-const whiteboardRoutes = require("./routes/whiteboard");
+
+// Databank
 const mongoose = require("mongoose");
-const cors = require("cors");
 
 // express app
 const app = express();
 
 //middleware
+// send data via json
 app.use(express.json());
 
+// small own little logger as middelware
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+
+// Manage CrossOverRessorceSharing Frontend and Backend on different servers
+const cors = require("cors");
 
 app.use(
   cors({
@@ -22,8 +28,12 @@ app.use(
   })
 );
 
+// Get Router
+const whiteboardRoutes = require("./routes/whiteboard");
+const flightQuestionsRouter = require("./routes/flightQuestionsRouter");
 // routes
 app.use("/api/whiteboard", whiteboardRoutes);
+app.use("/api/flightQuestions", flightQuestionsRouter);
 
 // Connect to db
 console.log("*** Backend Node.JS Server started ... ***");
