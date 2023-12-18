@@ -34,7 +34,7 @@ const createEntry = async (req, res) => {
       question,
       answer,
     });
-
+    console.log(singleSpecificFlightQuestion);
     res.status(200).json(singleSpecificFlightQuestion);
   } catch (error) {
     res.status(400).json({ error: error.message });
