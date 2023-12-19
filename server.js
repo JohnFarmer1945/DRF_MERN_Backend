@@ -32,11 +32,13 @@ app.use(
 const whiteboardRoutes = require("./routes/whiteboard");
 const flightQuestionsRouter = require("./routes/flightQuestionsRouter");
 const medQuestionsRouter = require("./routes/medQuestionsRouter");
+const usersRouter = require("./routes/usersRouter");
 
 // routes
 app.use("/api/whiteboard", whiteboardRoutes);
 app.use("/api/flightQuestions", flightQuestionsRouter);
 app.use("/api/medQuestions", medQuestionsRouter);
+app.use("/api/user", usersRouter);
 
 // Connect to db
 console.log("*** Backend Node.JS Server started ... ***");
