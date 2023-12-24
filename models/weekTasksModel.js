@@ -4,10 +4,15 @@ const Schema = mongoose.Schema;
 
 const weekTasksSchema = new Schema(
   {
-    day: {
+    Number: {
       type: Number,
       required: true,
       maxLength: 1,
+    },
+    Day: {
+      type: String,
+      required: true,
+      maxLength: 10,
     },
     TagFlug: {
       type: String,

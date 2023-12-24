@@ -22,14 +22,27 @@ const singleTask = async (req, res) => {
   res.status(200).json(singleTask);
 };
 
+// get a single entry WITH query day as integer 0-6
+const singleDay = async (req, res) => {
+  const { Number } = req.params;
+  console.log("single Task executed");
+  const singleDayTask = await weekTasksModel.findOne({ Number: Number }).exec();
+  if (!singleDayTask) {
+    return res.status(404).json({ error: "No such Single Day Task" });
+  }
+  res.status(200).json(singleDayTask);
+};
+
 // create a new entry
 const createEntry = async (req, res) => {
-  const { day, TagFlug, TagMedizin, NachtFlug, NachtMedizin } = req.body;
+  const { Number, Day, TagFlug, TagMedizin, NachtFlug, NachtMedizin } =
+    req.body;
 
   // ad mongo-document to db
   try {
     const singleSpecificTask = await weekTasksModel.create({
-      day,
+      Number,
+      Day,
       TagFlug,
       TagMedizin,
       NachtFlug,
@@ -84,6 +97,7 @@ const updateEntry = async (req, res) => {
 module.exports = {
   getAllTasks,
   singleTask,
+  singleDay,
   createEntry,
   deleteEntry,
   updateEntry,

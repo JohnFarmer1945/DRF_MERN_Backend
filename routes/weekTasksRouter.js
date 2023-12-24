@@ -3,6 +3,7 @@ const express = require("express");
 const {
   getAllTasks,
   singleTask,
+  singleDay,
   createEntry,
   deleteEntry,
   updateEntry,
@@ -16,6 +17,9 @@ router.get("/", getAllTasks);
 
 //POST
 router.get("/:id", singleTask);
+
+//POST
+router.get("/day/:Number", singleDay);
 
 // POST
 router.post("/", createEntry);
