@@ -29,7 +29,7 @@ const randomSpecificFlightQuestions = async (req, res) => {
   const allFlightQuestions = await flightQuestionsModel.find({});
 
   const randomIndex = Math.floor(Math.random() * allFlightQuestions.length);
-  console.log("randomIndex: " + randomIndex);
+
   const singleSpecificFlightQuestion = res
     .status(200)
     .json(allFlightQuestions[randomIndex]);
