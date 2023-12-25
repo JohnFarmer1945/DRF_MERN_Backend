@@ -24,6 +24,17 @@ const singleSpecificFlightQuestion = async (req, res) => {
   res.status(200).json(singleFlightQuestion);
 };
 
+// get a random entry
+const randomSpecificFlightQuestions = async (req, res) => {
+  const allFlightQuestions = await flightQuestionsModel.find({});
+
+  const randomIndex = Math.floor(Math.random() * allFlightQuestions.length);
+  console.log("randomIndex: " + randomIndex);
+  const singleSpecificFlightQuestion = res
+    .status(200)
+    .json(allFlightQuestions[randomIndex]);
+};
+
 // create a new entry
 const createEntry = async (req, res) => {
   const { question, answer } = req.body;
@@ -84,6 +95,7 @@ const updateEntry = async (req, res) => {
 module.exports = {
   getAllFlightQuestions,
   singleSpecificFlightQuestion,
+  randomSpecificFlightQuestions,
   createEntry,
   deleteEntry,
   updateEntry,
