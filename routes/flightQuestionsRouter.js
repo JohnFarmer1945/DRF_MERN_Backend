@@ -14,15 +14,10 @@ const router = express.Router();
 
 router.get("/", getAllFlightQuestions);
 
-<<<<<<< HEAD
-router.get("/random", randomSpecificFlightQuestions);
-
-=======
 //  GET
 router.get("/random", getRandomFlightQuestions);
 
 //POST
->>>>>>> DEV_login_useroutesControllerModel
 router.get("/:id", singleSpecificFlightQuestion);
 
 router.post("/", createEntry);
