@@ -2,6 +2,7 @@ const express = require("express");
 
 const {
   getAllMedQuestions,
+  getRandomMedQuestions,
   singleSpecificMedQuestion,
   createEntry,
   deleteEntry,
@@ -13,6 +14,9 @@ const router = express.Router();
 
 // GET
 router.get("/", getAllMedQuestions);
+
+// GET
+router.get("/random", getRandomMedQuestions);
 
 //POST
 router.get("/:id", singleSpecificMedQuestion);
