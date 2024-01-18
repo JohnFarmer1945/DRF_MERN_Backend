@@ -2,17 +2,20 @@ const express = require("express");
 
 const {
   getAllFlightQuestions,
+  getRandomFlightQuestions,
   singleSpecificFlightQuestion,
   createEntry,
   deleteEntry,
   updateEntry,
 } = require("../controllers/flightQuestionsController");
 
-//const whiteBoardModel = require("../models/whiteBoardModel");
 const router = express.Router();
 
 // GET
 router.get("/", getAllFlightQuestions);
+
+//  GET
+router.get("/random", getRandomFlightQuestions);
 
 //POST
 router.get("/:id", singleSpecificFlightQuestion);

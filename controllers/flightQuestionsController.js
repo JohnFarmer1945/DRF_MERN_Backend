@@ -10,6 +10,20 @@ const getAllFlightQuestions = async (req, res) => {
   res.status(200).json(allFlightQuestions);
 };
 
+// get a random entry:
+const getRandomFlightQuestions = async (req, res) => {
+  const randomFlightQuestions = await flightQuestionsModel
+    .find({})
+    .sort({ createdAt: -1 });
+
+  const singleRandomFlightQuestion =
+    randomFlightQuestions[
+      Math.floor(Math.random() * randomFlightQuestions.length)
+    ];
+
+  res.status(200).json(singleRandomFlightQuestion);
+};
+
 // get a single entry
 const singleSpecificFlightQuestion = async (req, res) => {
   const { id } = req.params;
@@ -83,6 +97,7 @@ const updateEntry = async (req, res) => {
 
 module.exports = {
   getAllFlightQuestions,
+  getRandomFlightQuestions,
   singleSpecificFlightQuestion,
   createEntry,
   deleteEntry,
