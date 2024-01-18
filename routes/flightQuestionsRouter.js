@@ -2,6 +2,7 @@ const express = require("express");
 
 const {
   getAllFlightQuestions,
+  getRandomFlightQuestions,
   singleSpecificFlightQuestion,
   randomSpecificFlightQuestions,
   createEntry,
@@ -9,13 +10,19 @@ const {
   updateEntry,
 } = require("../controllers/flightQuestionsController");
 
-//const whiteBoardModel = require("../models/whiteBoardModel");
 const router = express.Router();
 
 router.get("/", getAllFlightQuestions);
 
+<<<<<<< HEAD
 router.get("/random", randomSpecificFlightQuestions);
 
+=======
+//  GET
+router.get("/random", getRandomFlightQuestions);
+
+//POST
+>>>>>>> DEV_login_useroutesControllerModel
 router.get("/:id", singleSpecificFlightQuestion);
 
 router.post("/", createEntry);

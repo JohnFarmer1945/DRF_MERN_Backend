@@ -2,6 +2,7 @@ const express = require("express");
 
 const {
   getAllMedQuestions,
+  getRandomMedQuestions,
   singleSpecificMedQuestion,
   randomSpecificMedQuestions,
   createEntry,
@@ -14,8 +15,15 @@ const router = express.Router();
 
 router.get("/", getAllMedQuestions);
 
+<<<<<<< HEAD
 router.get("/random", randomSpecificMedQuestions);
 
+=======
+// GET
+router.get("/random", getRandomMedQuestions);
+
+//POST
+>>>>>>> DEV_login_useroutesControllerModel
 router.get("/:id", singleSpecificMedQuestion);
 
 router.post("/", createEntry);

@@ -10,6 +10,18 @@ const getAllMedQuestions = async (req, res) => {
   res.status(200).json(allMedQuestions);
 };
 
+// get a random entry:
+const getRandomMedQuestions = async (req, res) => {
+  const randomMedQuestions = await medQuestionsModel
+    .find({})
+    .sort({ createdAt: -1 });
+
+  const singleRandomMedQuestion =
+    randomMedQuestions[Math.floor(Math.random() * randomMedQuestions.length)];
+
+  res.status(200).json(singleRandomMedQuestion);
+};
+
 // get a single entry
 const singleSpecificMedQuestion = async (req, res) => {
   const { id } = req.params;
@@ -94,6 +106,7 @@ const updateEntry = async (req, res) => {
 
 module.exports = {
   getAllMedQuestions,
+  getRandomMedQuestions,
   singleSpecificMedQuestion,
   randomSpecificMedQuestions,
   createEntry,
