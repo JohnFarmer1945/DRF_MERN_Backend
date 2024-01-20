@@ -35,15 +35,13 @@ const medQuestionsRouter = require("./routes/medQuestionsRouter");
 
 const tasksRouter = require("./routes/weekTasksRouter");
 
-const usersRouter = require("./routes/usersRouter");
+const usersRouter = require("./routes/user.js");
 
 // routes
 app.use("/api/whiteboard", whiteboardRoutes);
 app.use("/api/flightQuestions", flightQuestionsRouter);
 app.use("/api/medQuestions", medQuestionsRouter);
-
 app.use("/api/tasks", tasksRouter);
-
 app.use("/api/user", usersRouter);
 
 // Connect to db
