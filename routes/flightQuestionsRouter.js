@@ -4,13 +4,18 @@ const {
   getAllFlightQuestions,
   getRandomFlightQuestions,
   singleSpecificFlightQuestion,
-  randomSpecificFlightQuestions,
   createEntry,
   deleteEntry,
   updateEntry,
 } = require("../controllers/flightQuestionsController");
 
+// import auth middleware function
+const requireAuth = require("../middleware/requireAuth");
+
 const router = express.Router();
+
+// Use requireAuthFunction for all flightQuestionRoutes
+router.use(requireAuth);
 
 router.get("/", getAllFlightQuestions);
 
