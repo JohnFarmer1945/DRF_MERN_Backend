@@ -10,19 +10,22 @@ const {
 //const whiteBoardModel = require("../models/whiteBoardModel");
 const router = express.Router();
 
+// import auth middleware function
+const requireAuth = require("../middleware/requireAuth");
+
 // GET
 router.get("/", getAllWhiteBoardEntrys);
 
 //POST
-router.get("/:id", singleSpecificWhiteBoardEntry);
+router.get("/:id", requireAuth, singleSpecificWhiteBoardEntry);
 
 // POST
-router.post("/", createEntry);
+router.post("/", requireAuth, createEntry);
 
 // DELETE
-router.delete("/:id", deleteEntry);
+router.delete("/:id", requireAuth, deleteEntry);
 
 // UPDATE
-router.patch("/:id", updateEntry);
+router.patch("/:id", requireAuth, updateEntry);
 
 module.exports = router;

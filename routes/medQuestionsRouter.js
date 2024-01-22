@@ -13,18 +13,25 @@ const {
 //const whiteBoardModel = require("../models/whiteBoardModel");
 const router = express.Router();
 
-router.get("/", getAllMedQuestions);
+// import auth middleware function
+const requireAuth = require("../middleware/requireAuth");
+
+// Use requireAuthFunction for all flightQuestionRoutes
+//router.use(requireAuth);
+// Secure single endpoints with middlewre.
 
 // GET
+router.get("/", requireAuth, getAllMedQuestions);
+
 router.get("/random", getRandomMedQuestions);
 
 //POST
-router.get("/:id", singleSpecificMedQuestion);
+router.get("/:id", requireAuth, singleSpecificMedQuestion);
 
-router.post("/", createEntry);
+router.post("/", requireAuth, createEntry);
 
-router.delete("/:id", deleteEntry);
+router.delete("/:id", requireAuth, deleteEntry);
 
-router.patch("/:id", updateEntry);
+router.patch("/:id", requireAuth, updateEntry);
 
 module.exports = router;

@@ -15,20 +15,21 @@ const requireAuth = require("../middleware/requireAuth");
 const router = express.Router();
 
 // Use requireAuthFunction for all flightQuestionRoutes
-router.use(requireAuth);
+//router.use(requireAuth);
+// Secure single endpoints with middlewre.
 
-router.get("/", getAllFlightQuestions);
+router.get("/", requireAuth, getAllFlightQuestions);
 
 //  GET
 router.get("/random", getRandomFlightQuestions);
 
 //POST
-router.get("/:id", singleSpecificFlightQuestion);
+router.get("/:id", requireAuth, singleSpecificFlightQuestion);
 
-router.post("/", createEntry);
+router.post("/", requireAuth, createEntry);
 
-router.delete("/:id", deleteEntry);
+router.delete("/:id", requireAuth, deleteEntry);
 
-router.patch("/:id", updateEntry);
+router.patch("/:id", requireAuth, updateEntry);
 
 module.exports = router;
