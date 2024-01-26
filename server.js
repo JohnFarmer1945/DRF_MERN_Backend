@@ -22,12 +22,11 @@ app.use((req, res, next) => {
 //Manage CrossOverRessorceSharing Frontend and Backend on different servers
 const cors = require("cors");
 
-app.use(cors());
-// app.use(
-//   cors({
-//     origin: "*",
-//   })
-// );
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 // Get Router
 const whiteboardRoutes = require("./routes/whiteboard");
