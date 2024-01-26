@@ -28,6 +28,15 @@ app.use(
   })
 );
 
+// Sample CORS headers in Node/Express
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
+  res.header("Access-Control-Allow-Headers", "content-type");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 // Get Router
 const whiteboardRoutes = require("./routes/whiteboard");
 const flightQuestionsRouter = require("./routes/flightQuestionsRouter");
