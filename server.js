@@ -40,6 +40,10 @@ app.use("/api/medQuestions", medQuestionsRouter);
 app.use("/api/tasks", tasksRouter);
 app.use("/api/user", usersRouter);
 
+app.get("/", (req, res) => {
+  res.send("Hello Charming!");
+});
+
 // Connect to db
 console.log("*** Backend Node.JS Server started ... ***");
 console.log("");
