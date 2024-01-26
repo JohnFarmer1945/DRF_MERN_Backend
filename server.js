@@ -22,15 +22,16 @@ app.use((req, res, next) => {
 // Manage CrossOverRessorceSharing Frontend and Backend on different servers
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: [
-      "https://drf-crewbriefing-backend.netlify.app",
-      "https://drf-crewbriefing.netlify.app",
-      "https://drf-crewbriefing.netlify.app/",
-    ],
-  })
-);
+app.use(cors());
+// app.use(
+//   cors({
+//     origin: [
+//       "https://drf-crewbriefing-backend.netlify.app",
+//       "https://drf-crewbriefing.netlify.app",
+//       "https://drf-crewbriefing.netlify.app/",
+//     ],
+//   })
+// );
 
 // Get Router
 const whiteboardRoutes = require("./routes/whiteboard");
