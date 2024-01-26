@@ -24,7 +24,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["https://drf-crewbriefing-backend.netlify.app/api/whiteboard"],
+    origin: ["https://drf-crewbriefing-backend.netlify.app/api/whiteboard/"],
   })
 );
 
