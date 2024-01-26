@@ -1,7 +1,10 @@
 {
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": [
+        "https://drf-mern-backend.vercel.app/api/whiteboard",
+        "/api/(.*)"
+      ],
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
