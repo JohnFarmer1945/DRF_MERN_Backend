@@ -24,10 +24,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: [
-      "https://drf-crewbriefing.netlify.app",
-      "https://drf-crewbriefing.netlify.app/",
-    ],
+    origin: "https://drf-crewbriefing.netlify.app",
   })
 );
 
