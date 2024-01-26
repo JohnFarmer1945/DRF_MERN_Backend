@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "https://drf-mern-backend.vercel.app/:path*"
-    }
-  ]
-}
