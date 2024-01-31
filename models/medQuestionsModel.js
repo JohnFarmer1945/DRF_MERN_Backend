@@ -7,12 +7,12 @@ const medQuestionsSchema = new Schema(
     question: {
       type: String,
       required: true,
-      maxLength: 20,
+      maxLength: 30,
     },
     answer: {
       type: String,
       required: true,
-      maxLength: 50,
+      maxLength: 30,
     },
   },
   { timestamps: true }
